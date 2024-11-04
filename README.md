@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CRUD App with Next.js, Redux, and SCSS
+
+This is a simple CRUD (Create, Read, Update, Delete) application built using **Next.js** with **Redux** for state management and **SCSS** for styling. The app displays a list of users on the home screen. Users can view detailed information, edit user data, or delete users.
+
+## Features
+
+- **View Users**: Users are fetched and displayed on the home screen.
+- **User Details**: Clicking on a user shows their detailed information.
+- **Edit Users**: User details can be modified and saved.
+- **Delete Users**: Users can be deleted from the list.
+
+## Technologies Used
+
+- **Next.js**: A React framework for server-rendered and static web applications.
+- **Redux**: For global state management of user data.
+- **SCSS**: For styling the components with modular and customizable styles.
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   ```
+   
+2. **Navigate to the project directory**:
+   ```bash
+   cd userapp
+   ```
+   
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+4. **Run the application**:
+   ```bash
+   npm run dev
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
+- `components/`: Reusable components used throughout the app.
+- `redux/`: Contains Redux store, actions, and reducers.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Usage
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **View All Users**: The home screen displays a list of users fetched from the backend.
+2. **View Details**: Click on any user to view more detailed information.
+3. **Edit User**: Edit the user's details on the user details page, then save changes.
+4. **Delete User**: Delete any user from the list.
