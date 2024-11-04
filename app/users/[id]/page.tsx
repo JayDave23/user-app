@@ -7,7 +7,7 @@ import { setuser } from '../../redux/userSlice';
 const UserDetails: React.FC = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const user = useSelector((state:any) => state.user);
+  const user = useSelector((state: AppState) => state.user);
   const [isEditing, setIsEditing] = useState(false);
   const [editedUser, setEditedUser] = useState({
     name: '',
