@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'next/navigation'
 import { setuser } from '../../redux/userSlice';
-
+import { AppState } from '../../../types';
 const UserDetails: React.FC = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const user = useSelector(state => state.user);
+  const user = useSelector((state:AppState) => state.user);
   const [isEditing, setIsEditing] = useState(false);
   const [editedUser, setEditedUser] = useState({
     name: '',
