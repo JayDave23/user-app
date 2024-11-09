@@ -11,7 +11,7 @@ interface ModalProps {
 }
 const UserModal: React.FC<ModalProps> = ({ user, onClose  , onSave}) => {
   
-  const [isEditing, setIsEditing] = useState<Boolean>(false);
+  const [isEditing, setIsEditing] = useState<boolean>(false);
   const [displayuser, setDisplalyUser] = useState<UserState|null>(user);
   const [editedUser, setEditedUser] = useState<any>({
     name: '',
@@ -60,7 +60,7 @@ const UserModal: React.FC<ModalProps> = ({ user, onClose  , onSave}) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setEditedUser((prev: String) => ({
+    setEditedUser((prev: object) => ({
       ...prev,
       [name]: value,
     }));
@@ -68,7 +68,7 @@ const UserModal: React.FC<ModalProps> = ({ user, onClose  , onSave}) => {
 
   const handleAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setEditedUser((prev: { address: String; }) => ({
+    setEditedUser((prev: { address: object; }) => ({
       ...prev,
       address: {
         ...prev.address,
@@ -79,7 +79,7 @@ const UserModal: React.FC<ModalProps> = ({ user, onClose  , onSave}) => {
 
   const handleCompanyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setEditedUser((prev: { company: String; }) => ({
+    setEditedUser((prev: { company: object; }) => ({
       ...prev,
       company: {
         ...prev.company,
