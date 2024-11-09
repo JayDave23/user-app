@@ -8,10 +8,9 @@ import { setuser } from '../redux/userSlice';
 interface ModalProps {
   user: UserState | null;
   onClose: () => void;
-  setUsers: any;
   onSave: (updatedUser:UserState) => void;
 }
-const UserModal: React.FC<ModalProps> = ({ user, onClose  , setUsers, onSave}) => {
+const UserModal: React.FC<ModalProps> = ({ user, onClose  , onSave}) => {
   if (!user) return null;
   const [isEditing, setIsEditing] = useState(false);
   const [displayuser, setDisplalyUser] = useState(user);
@@ -323,7 +322,6 @@ const Users = useSelector((state:AppState) => state.user);
         <UserModal 
           user={selectedUser} 
           onClose={() => setSelectedUser(null)} 
-          setUsers = {setUsers}
           onSave={handleSave}
         />
       )}
