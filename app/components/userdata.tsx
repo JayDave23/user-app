@@ -5,15 +5,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppState, UserState } from '../../types';
 import { setuser } from '../redux/userSlice';
 interface ModalProps {
-  user: UserState | null;
+  user: UserState;
   onClose: () => void;
   onSave: (updatedUser:UserState) => void;
 }
 const UserModal: React.FC<ModalProps> = ({ user, onClose  , onSave}) => {
   
   const [isEditing, setIsEditing] = useState<boolean>(false);
-  const [displayuser, setDisplalyUser] = useState<UserState|null>(user);
-  const [editedUser, setEditedUser] = useState<any>({
+  const [displayuser, setDisplalyUser] = useState<UserState>(user);
+  const [editedUser, setEditedUser] = useState({
+    id: '' ,
     name: '',
     username: '',
     email: '',
@@ -60,7 +61,7 @@ const UserModal: React.FC<ModalProps> = ({ user, onClose  , onSave}) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setEditedUser((prev: object) => ({
+    setEditedUser((prev) => ({
       ...prev,
       [name]: value,
     }));
@@ -68,7 +69,7 @@ const UserModal: React.FC<ModalProps> = ({ user, onClose  , onSave}) => {
 
   const handleAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setEditedUser((prev: { address: object; }) => ({
+    setEditedUser(prev => ({
       ...prev,
       address: {
         ...prev.address,
@@ -79,7 +80,7 @@ const UserModal: React.FC<ModalProps> = ({ user, onClose  , onSave}) => {
 
   const handleCompanyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setEditedUser((prev: { company: object; }) => ({
+    setEditedUser(prev => ({
       ...prev,
       company: {
         ...prev.company,
@@ -276,7 +277,7 @@ const Users = useSelector((state:AppState) => state.user);
     setUsers(updatedUsers);
     setFilteredUsers(updatedUsers);
   };
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: string) => {
     const updatedUsers = user.filter(user => user.id !== id);
     setUsers(updatedUsers);
     setFilteredUsers(updatedUsers);
