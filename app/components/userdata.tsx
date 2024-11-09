@@ -13,7 +13,7 @@ const UserModal: React.FC<ModalProps> = ({ user, onClose  , onSave}) => {
   
   const [isEditing, setIsEditing] = useState<boolean>(false);
   const [displayuser, setDisplalyUser] = useState<UserState>(user);
-  const [editedUser, setEditedUser] = useState({
+  const [editedUser, setEditedUser] = useState<UserState>({
     id: '' ,
     name: '',
     username: '',
