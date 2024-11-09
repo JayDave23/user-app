@@ -266,7 +266,7 @@ const Users = useSelector((state:AppState) => state.user);
     };
 
     fetchUsers();
-  });
+  }), [];
   const handleSearch = (id: string) => {
     const filtered = user.filter((user: { id: { toString: () => string; }; }) => user.id.toString() === id);
     setFilteredUsers(filtered);
