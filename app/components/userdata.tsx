@@ -85,6 +85,7 @@ const UserModal: React.FC<ModalProps> = ({ user, onClose  , onSave}) => {
       company: {
         ...prev.company,
         [name]: value,
+
       },
     }));
   };
@@ -245,7 +246,7 @@ const UserModal: React.FC<ModalProps> = ({ user, onClose  , onSave}) => {
 const UserData: React.FC = () => {
   const [user, setUsers] = useState<UserState[]>([]);
   const [filteredUsers, setFilteredUsers] = useState<UserState[]>([]);
-  const [selectedUser, setSelectedUser] = useState<UserState[] | null>(null);
+  const [selectedUser, setSelectedUser] = useState<UserState | null>(null);
 const dispatch = useDispatch();
 const Users = useSelector((state:AppState) => state.user);
   useEffect(() => {
