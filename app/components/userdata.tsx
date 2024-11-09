@@ -11,7 +11,7 @@ interface ModalProps {
   onSave: (updatedUser:UserState) => void;
 }
 const UserModal: React.FC<ModalProps> = ({ user, onClose  , onSave}) => {
-  if (!user) return null;
+  
   const [isEditing, setIsEditing] = useState(false);
   const [displayuser, setDisplalyUser] = useState(user);
   const [editedUser, setEditedUser] = useState({
@@ -88,7 +88,7 @@ const UserModal: React.FC<ModalProps> = ({ user, onClose  , onSave}) => {
       },
     }));
   };
-
+  if (!user) return null;
   return (
     <div className="user-page">
       <h1 className="user-title">User Details</h1>
