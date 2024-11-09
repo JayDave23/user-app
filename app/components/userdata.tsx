@@ -1,7 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import SearchBar from './searchbar';
-import { useRouter } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppState, UserState } from '../../types';
 import { setuser } from '../redux/userSlice';
