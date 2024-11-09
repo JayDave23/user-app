@@ -265,7 +265,7 @@ const Users = useSelector((state:AppState) => state.user);
     };
 
     fetchUsers();
-  }, [dispatch]);
+  }, []);
   const handleSearch = (id: string) => {
     const filtered = user.filter((user: { id: { toString: () => string; }; }) => user.id.toString() === id);
     setFilteredUsers(filtered);
@@ -282,7 +282,6 @@ const Users = useSelector((state:AppState) => state.user);
     setUsers(updatedUsers);
     setFilteredUsers(updatedUsers);
   };
-  const router = useRouter();
   return (
     <div className="userdata">
       <div className="searchbardiv">
