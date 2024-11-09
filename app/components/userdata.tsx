@@ -257,7 +257,8 @@ const Users = useSelector((state:AppState) => state.user);
         setUsers(data);
         dispatch(setuser(data));
         setFilteredUsers(data);
-        
+        console.log(Users)
+
         
       } catch (error) {
         console.error('Error fetching users:', error);
@@ -269,6 +270,7 @@ const Users = useSelector((state:AppState) => state.user);
   const handleSearch = (id: string) => {
     const filtered = user.filter((user: { id: { toString: () => string; }; }) => user.id.toString() === id);
     setFilteredUsers(filtered);
+
   };
   
   const handleSave = (updatedUser:UserState) => {
